@@ -1,0 +1,13 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+#####ADDON FOR RADIO START
+# Test for /opt/placeholder levery 5 seconds, up to 10 times
+x=0; while [ $x -lt 10 ]; do
+  [ -f /opt/placeholder ] && break
+  sleep 5
+  : $((++x))
+done
+# If /opt/placeholder is (finally) there, run it!
+[ -f /opt/placeholder ] && /opt/scripts/starter.sh
+######ADDON FOR RADIO END 
+exit 0 
