@@ -7,8 +7,8 @@ HOME=/root
 /etc/init.d/mpd start
 mpc load radio.pls
 echo "AVR Start!" >/dev/ttyS0
-sleep 2
-mpc play
+#sleep 2
+#mpc play
 trap 'exit 1' SIGINT    # exit on ctrl-c, useful for debugging
 while true        # loop forever
  do
